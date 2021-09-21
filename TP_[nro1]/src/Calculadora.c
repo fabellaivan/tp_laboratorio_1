@@ -2,7 +2,7 @@
  ============================================================================
  Name        : Calculadora.c
  Author      : Fabella Ivan Maximiliano
- Version     : 1
+ Version     : 2
  Copyright   : Your copyright notice
  Description : Hello World in C, Ansi-style
  ============================================================================
@@ -17,20 +17,21 @@ int main(void) {
 
 	setbuf(stdout, NULL);
 	int opcion;
-	int numeroA;
-	int numeroB;
+	float numeroA;
+	float numeroB;
 	int flagNumero1;
 	int flagNumero2;
 	int flagCalculos;
 	char salir;
-	int resultadoSuma;
-	int resultadoResta;
+	int validacionDivicion;
+	float resultadoSuma;
+	float resultadoResta;
 	float resultadoDivision;
-	int resultadoMultiplicacion;
-	int resultadoFactorialA;
-	int resultadoFactorialB;
+	float resultadoMultiplicacion;
+	float resultadoFactorialA;
+	float resultadoFactorialB;
 	opcion='n';
-	flagNumero1=0;;
+	flagNumero1=0;
 	flagNumero2=0;
 	flagCalculos=0;
 
@@ -41,7 +42,7 @@ int main(void) {
 			printf("X)\n");
 		}else
 		{
-			printf("%d)\n",numeroA);
+			printf("%.2f)\n",numeroA);
 		}
 
 		printf("2. Ingrese 2do operando (B=");
@@ -50,7 +51,7 @@ int main(void) {
 					printf("X)\n");
 				}else
 				{
-					printf("%d)\n",numeroB);
+					printf("%.2f)\n",numeroB);
 				}
 
 		printf("3. Calcular todas las operaciones\n");
@@ -60,15 +61,13 @@ int main(void) {
 
 		switch(opcion){
 		case 1:
-				printf("Ingrese numero A \n");
-				scanf("%d",&numeroA);
+				PedirEntero("Ingrese numero A: \n",&numeroA);
 				flagNumero1++;
 				flagCalculos=0;
 		break;
 
 		case 2:
-				printf("Ingrese numero B, recuerde que no se puede dividir entre cero. \n");
-				scanf("%d",&numeroB);
+				PedirEntero("Ingrese numero B: \n",&numeroB);
 				flagNumero2++;
 				flagCalculos=0;
 		break;
@@ -80,13 +79,15 @@ int main(void) {
 			}
 			else
 			{
-				resultadoSuma=Suma(numeroA,numeroB);
-				resultadoResta=Resta(numeroA,numeroB);
-				resultadoMultiplicacion=Multiplicacion(numeroA,numeroB);
-				resultadoDivision=Division(numeroA,numeroB);
-				resultadoFactorialA=factorial(numeroA);
+
+				Suma(numeroA,numeroB,&resultadoSuma);
+				Resta(numeroA,numeroB,&resultadoResta);
+				Multiplicacion(numeroA,numeroB,&resultadoMultiplicacion);
+				validacionDivicion=Division(numeroA,numeroB,&resultadoDivision);
 				resultadoFactorialB=factorial(numeroB);
+				resultadoFactorialA=factorial(numeroA);
 				flagCalculos++;
+
 				printf("\nSe relizaron los calculos\n\n");
 			}
 		break;
@@ -98,19 +99,19 @@ int main(void) {
 			}
 			else
 			{
-				printf("El resultado de A+B es %d\n",resultadoSuma);
+				printf("El resultado de A+B es %.2f\n",resultadoSuma);
 
-				printf("El resultado de A-B es %d\n",resultadoResta);
+				printf("El resultado de A-B es %.2f\n",resultadoResta);
 
-				printf("El resultado de A*B es %d\n",resultadoMultiplicacion);
+				printf("El resultado de A*B es %.2f\n",resultadoMultiplicacion);
 
-				if(resultadoDivision==0)
+				if(validacionDivicion==0)
 				{
 					printf("No se pudo calcular la division.  No se puede dividir entre cero\n ");
 				}
 				else
 				{
-					printf("El resultado de la division es %f\n",resultadoDivision);
+					printf("El resultado de la division es %.2f\n",resultadoDivision);
 				}
 
 				if(resultadoFactorialA==0)
@@ -119,7 +120,7 @@ int main(void) {
 				}
 				else
 				{
-					printf("El factorial de A es: %d y ",resultadoFactorialA);
+					printf("El factorial de A es: %.2f y ",resultadoFactorialA);
 				}
 
 				if(resultadoFactorialB==0)
@@ -128,7 +129,7 @@ int main(void) {
 				}
 					else
 					{
-						printf("el factorial de B es: %d\n\n",resultadoFactorialB);
+						printf("el factorial de B es: %.2f\n\n",resultadoFactorialB);
 					}
 				flagCalculos=0;
 				flagNumero1=0;
