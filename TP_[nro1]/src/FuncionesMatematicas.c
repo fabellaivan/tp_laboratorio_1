@@ -8,19 +8,11 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
-#include "Biblioteca.h"
+
+#include "Bibliotecas.h"
 #define TAM 10
 
-void PedirNumero(char mensaje[],float* refNumeroIngresado)
-{
-	setbuf(stdout, NULL);
-	float numeroIngresado;
 
-	printf("%s",mensaje);
-	fflush(stdin);
-	scanf("%f",&numeroIngresado);
-	*refNumeroIngresado=numeroIngresado;
-}
 
 
 void Suma(float numeroA, float numeroB,float* refResultadoSuma)

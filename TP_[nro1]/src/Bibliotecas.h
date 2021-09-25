@@ -5,8 +5,8 @@
  *      Author: Ivan Fabella
  */
 
-#ifndef BIBLIOTECA_H_
-#define BIBLIOTECA_H_
+#ifndef BIBLIOTECAS_H_
+#define BIBLIOTECAS_H_
 
 
 /// @fn void PedirNumero(char[], float*)
@@ -60,4 +60,4 @@ int Division(float numeroA, float numeroB,float* refResultadoDivicion);
 int factorial(float numeroF,float* resultado);
 
 
-#endif /* BIBLIOTECA_H_ */
+#endif /* BIBLIOTECAS_H_ */
