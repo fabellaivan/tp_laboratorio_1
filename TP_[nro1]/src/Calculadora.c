@@ -24,6 +24,8 @@ int main(void) {
 	int flagCalculos;
 	char salir;
 	int validacionDivicion;
+	int validacionFactorialA;
+	int validacionFactorialB;
 	float resultadoSuma;
 	float resultadoResta;
 	float resultadoDivision;
@@ -57,7 +59,7 @@ int main(void) {
 		printf("3. Calcular todas las operaciones\n");
 		printf("4. Informar resultados\n");
 		printf("5. Salir\n");
-		scanf("%d",&opcion);
+		scanf("%d",&opcion);//opcion=IngresarEntero
 
 		switch(opcion){
 		case 1:
@@ -84,8 +86,8 @@ int main(void) {
 				Resta(numeroA,numeroB,&resultadoResta);
 				Multiplicacion(numeroA,numeroB,&resultadoMultiplicacion);
 				validacionDivicion=Division(numeroA,numeroB,&resultadoDivision);
-				resultadoFactorialB=factorial(numeroB);
-				resultadoFactorialA=factorial(numeroA);
+				validacionFactorialB=factorial(numeroB,&resultadoFactorialB);
+				validacionFactorialA=factorial(numeroA,&resultadoFactorialA);
 				flagCalculos++;
 
 				printf("\nSe relizaron los calculos\n\n");
@@ -114,7 +116,7 @@ int main(void) {
 					printf("El resultado de la division es %.2f\n",resultadoDivision);
 				}
 
-				if(resultadoFactorialA==0)
+				if(validacionFactorialA==0)
 				{
 					printf("El operando A esta fuera de rango para factorizar. Debe ser mayor a 0 y menor a 12 y \n");
 				}
@@ -123,7 +125,7 @@ int main(void) {
 					printf("El factorial de A es: %.2f y ",resultadoFactorialA);
 				}
 
-				if(resultadoFactorialB==0)
+				if(validacionFactorialB==0)
 				{
 					printf("El operando B esta fuera de rango para factorizar. Debe ser mayor a 0 y menor a 12\n\n");
 				}

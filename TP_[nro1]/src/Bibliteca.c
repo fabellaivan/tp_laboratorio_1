@@ -9,47 +9,19 @@
 #include <string.h>
 #include <ctype.h>
 #include "Biblioteca.h"
+#define TAM 10
 
 void PedirEntero(char mensaje[],float* refNumeroIngresado)
 {
 	setbuf(stdout, NULL);
 	float numeroIngresado;
-//	int valido;
 
-	//do{
-
-		printf("%s",mensaje);
-		fflush(stdin);
-		scanf("%f",&numeroIngresado);
-		*refNumeroIngresado=numeroIngresado;
-		/*valido=ValidarNumero(numeroIngresado);
-
-	}while(valido==0);
-*/
-
-
+	printf("%s",mensaje);
+	fflush(stdin);
+	scanf("%f",&numeroIngresado);
+	*refNumeroIngresado=numeroIngresado;
 }
-/*
-int ValidarNumero(float validarNumeros)
-{
-	setbuf(stdout, NULL);
-	int aux;
-	aux=validarNumeros;
 
-	if(validarNumero<MINIMO || validarNumero>MAXIMO)
-	{
-		printf("El numero ingresado no esta entre los valores correspondientes, intente nuevamente\n");
-		return 0;
-	}
-
-	if(validarNumero>aux)
-	{
-		printf("Debe ingresar numeros enteros, no decimales\n");
-		return 0;
-	}
-
-	return 1 ;
-}*/
 
 void Suma(float numeroA, float numeroB,float *refResultadoSuma)
 {
@@ -83,7 +55,7 @@ int Division(float numeroA, float numeroB,float* refResultadoDivicion)
 }
 
 
-float factorial(float numeroF)
+int factorial(float numeroF,float* resultado)
 {
 
 	float factorial;
@@ -99,7 +71,8 @@ float factorial(float numeroF)
 		{
 			factorial=factorial*i;
 		}
-		return factorial;
+		*resultado=factorial;
+		return 1;
 	}
 }
 

@@ -8,9 +8,14 @@
 #ifndef BIBLIOTECA_H_
 #define BIBLIOTECA_H_
 
+
+/// @fn void PedirEntero(char[], float*)
+/// @brief
+///
+/// @param mensaje
+/// @param refNumeroIngresado
 void PedirEntero(char mensaje[],float* refNumeroIngresado);
 
-int ValidarNumero(float validarNumeros);
 
 /// @fn void Suma(float, float, float*)
 /// @brief Realiza la suma de dos operandos
@@ -45,12 +50,13 @@ void Multiplicacion(float numeroA, float numeroB,float* refResultadoMultiplicaci
 /// @return retorna 0 cuando no se pudo resolver la divicion por parametro numeroB=0 o 1 cuando se puedo calcular la division
 int Division(float numeroA, float numeroB,float* refResultadoDivicion);
 
-/// @fn float factorial(float)
-/// @brief Realiza el factorial de un numero
+/// @fn int factorial(float, float*)
+/// @brief
 ///
-/// @param numeroF recibe numero a factorizar
-/// @return devuelve 0 si es mayor a 12 o menor a 0 O devuelve el resultado de la factorizacion
-float factorial(float numeroF);
+/// @param numeroF
+/// @param resultado
+/// @return
+int factorial(float numeroF,float* resultado);
 
 
 #endif /* BIBLIOTECA_H_ */
