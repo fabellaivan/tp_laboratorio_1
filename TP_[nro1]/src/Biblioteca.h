@@ -9,12 +9,13 @@
 #define BIBLIOTECA_H_
 
 
-/// @fn void PedirEntero(char[], float*)
-/// @brief
+/// @fn void PedirNumero(char[], float*)
+/// @brief Pide un numero al usuario.
 ///
-/// @param mensaje
-/// @param refNumeroIngresado
-void PedirEntero(char mensaje[],float* refNumeroIngresado);
+/// @param mensaje Para ingresar la peticion al usr.
+/// @param refNumeroIngresado devuelve por referencia el numero que el usr ingreso.
+/// La funcion podria cambiar a int cuando se pueda validar si el usr ingreso una letra y no un numero. Eso no lo pude lograr hacer.
+void PedirNumero(char mensaje[],float* refNumeroIngresado);
 
 
 /// @fn void Suma(float, float, float*)

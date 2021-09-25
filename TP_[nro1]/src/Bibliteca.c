@@ -11,7 +11,7 @@
 #include "Biblioteca.h"
 #define TAM 10
 
-void PedirEntero(char mensaje[],float* refNumeroIngresado)
+void PedirNumero(char mensaje[],float* refNumeroIngresado)
 {
 	setbuf(stdout, NULL);
 	float numeroIngresado;
@@ -23,7 +23,7 @@ void PedirEntero(char mensaje[],float* refNumeroIngresado)
 }
 
 
-void Suma(float numeroA, float numeroB,float *refResultadoSuma)
+void Suma(float numeroA, float numeroB,float* refResultadoSuma)
 {
 	*refResultadoSuma=numeroA+numeroB;
 }

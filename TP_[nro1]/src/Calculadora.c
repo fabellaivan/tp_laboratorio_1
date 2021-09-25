@@ -63,13 +63,13 @@ int main(void) {
 
 		switch(opcion){
 		case 1:
-				PedirEntero("Ingrese numero A: \n",&numeroA);
+				PedirNumero("Ingrese numero A: \n",&numeroA);
 				flagNumero1++;
 				flagCalculos=0;
 		break;
 
 		case 2:
-				PedirEntero("Ingrese numero B: \n",&numeroB);
+				PedirNumero("Ingrese numero B: \n",&numeroB);
 				flagNumero2++;
 				flagCalculos=0;
 		break;
